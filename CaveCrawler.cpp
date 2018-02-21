@@ -8,8 +8,8 @@
 using namespace std;
 
 int main()
-{
+{	
 	Intro();
-	Init();
+	player Me = Init();
 	return 0;
 }

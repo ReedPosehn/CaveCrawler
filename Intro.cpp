@@ -20,7 +20,11 @@ void Intro()
 	cout << "       CCC      AA   AA         VV	    EEEE\n";
 	cout << "\n";
 	cout << "\n";
-	cout << "Crawler :) \n";
+	cout << "Crawler \n";
 	cout << "=================================================\n";
         cout << "=================================================\n";
+	cout << endl;
+	cout << "You wake up in a dark, dusty cave.\n You see a light "; 
+	cout << "flickering from a torch hanging above some type of object.\n ";
+	cout << "You pick it up." << endl;
 }
