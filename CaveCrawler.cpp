@@ -10,6 +10,6 @@ using namespace std;
 int main()
 {	
 	Intro();
-	player Me = Init();
+	player Me = initPlayer();
 	return 0;
 }

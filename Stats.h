@@ -2,7 +2,7 @@
 
 struct weapon
 {
-	bool type;
+	bool type; // 0 null, 1 phys, 2 ranged
 	int baseDmg; // base damage, not taking into account stats
 	int value; // ammount it can be sold to a merchant
 };
@@ -35,9 +35,9 @@ struct player
 		     // strength
 	int speed;
 	int barehand;
-	struct weapon; // currently wielded weapon
-	struct status; // holds the ailments that are applicable
-	struct belt; // holds the items that player can use
+	struct weapon wep; // currently wielded weapon
+	struct status stat; // holds the ailments that are applicable
+	struct belt belt; // holds the items that player can use
 };
 
 struct enemy

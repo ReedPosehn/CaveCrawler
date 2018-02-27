@@ -1,3 +1,10 @@
 // Reed Posehn, 2017
 
-player Init();
+#ifndef INIT
+#define INIT
+
+// declarations
+player initPlayer();
+belt initPlayerBelt();
+
+#endif
