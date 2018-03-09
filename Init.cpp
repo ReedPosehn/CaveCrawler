@@ -32,3 +32,56 @@ belt initPlayerBelt()
 	b->upgrade = 0;
 	return *b;
 }
+
+room* initRooms()
+{
+	room *rooms = new room[4];
+	rooms[0].id = 0;
+	rooms[0].north = 1;
+	rooms[0].west = 0;
+	rooms[0].east = 1;
+	rooms[0].south = 0;
+	rooms[0].item = 0;
+	rooms[0].desc = "A cramped, musky room. Its empty, with the exception "
+	"of torches lining the \nwalls. There are two exits, to the north and "
+	"to the east.";
+	rooms[0].northR = &rooms[1];
+	rooms[0].eastR = &rooms[2];
+	
+	rooms[1].id = 1;
+	rooms[1].north = 0;
+        rooms[1].west = 0;
+        rooms[1].east = 1;
+        rooms[1].south = 1;
+	rooms[1].item = 0;
+	rooms[1].desc = "A wide cavern, with a large body of water. You cannot "
+	"tell the depth of the water.\nThe room is extremely dark and damp. "
+	"There are exits to the east and to the south.";
+	rooms[1].southR = &rooms[0];
+        rooms[1].eastR = &rooms[3];
+	
+	rooms[2].id = 2;
+	rooms[2].north = 1;
+        rooms[2].west = 1;
+        rooms[2].east = 0;
+        rooms[2].south = 0;
+	rooms[2].item = 0;
+	rooms[2].desc = "A small tiny room. There are odd scratchs and markings"
+	" covering the walls. The light \nis dim but penetrates from the west. "
+	"There are exits to the north and to the west.";
+	rooms[2].westR = &rooms[0];
+        rooms[2].northR = &rooms[3];
+	
+	rooms[3].id = 3;
+	rooms[3].north = 0;
+        rooms[3].west = 1;
+        rooms[3].east = 0;
+        rooms[3].south = 1;
+	rooms[3].item = 0;
+	rooms[3].desc = "This room is wide and narrow, with a gentle breeze "
+	"coming from north. It looks \nlike it exits to a forest. Exits to the "
+	"west and south continue further into the \ncave.";
+	rooms[3].westR = &rooms[1];
+        rooms[3].southR = &rooms[2];
+	return rooms;
+}

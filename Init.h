@@ -6,5 +6,6 @@
 // declarations
 player initPlayer();
 belt initPlayerBelt();
+room* initRooms();
 
 #endif

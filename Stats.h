@@ -1,4 +1,12 @@
 // Reed Posehn, 2017
+using namespace std;
+
+typedef struct room room;
+typedef struct weapon weapon;
+typedef struct status status;
+typedef struct belt belt;
+typedef struct player player;
+typedef struct enemy enemy;
 
 struct weapon
 {
@@ -45,4 +53,19 @@ struct enemy
 	int health;
 	int str;
 	int speed;
+};
+
+struct room
+{
+	int id;
+	int north;
+	int west;
+	int east;
+	int south;
+	room* northR;
+	room* westR;
+	room* eastR;
+	room* southR;
+	int item;
+	string desc;
 };
