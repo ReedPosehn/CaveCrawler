@@ -11,6 +11,7 @@ void help()
 	cout << "Possible commands --" << endl;
 	cout << "look -- Gives a description of the surounding area." << endl;
 	cout << "move -- Travel to a different area." << endl;
+	cout << "supplies -- Check your on hand supplies." << endl;
 }
 
 void look(room cur)
@@ -64,4 +65,24 @@ int move(room cur, int dir)
 	}
 	cout << "Cannot go that direction." << endl;
 	return 0;
+}
+
+void supplies(player you)
+{
+	if(you.belt.berry != 0)
+	{
+		cout << you.belt.berry << " berries." << endl;	
+	}
+	if(you.belt.mushroom != 0)
+        {
+                cout << you.belt.mushroom << " mushrooms." << endl;
+        }
+	if(you.belt.water != 0)
+        {
+                cout << you.belt.water << " drinks of water." << endl;
+        }
+	if(you.belt.meat != 0)
+        {
+                cout << you.belt.meat << " pieces of meat." << endl;
+        }
 }
