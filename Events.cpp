@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+// Chance of spawning an item upon entering a room
 int spawnItem()
 {
 	int roll = rand() % 10;
@@ -30,6 +31,7 @@ int spawnItem()
 	return 0;
 }
 
+// Chance of spawning a monster upon entering a room
 int spawnMonster()
 {
 	return 0;

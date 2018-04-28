@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+// Startup introduction
 void Intro()
 {
 	cout << "\n";
@@ -14,7 +15,7 @@ void Intro()
 	cout << "=================================================\n";
 	cout << "=================================================\n";
 	cout << "CAVE CRAWLER\n";
-	cout << "Reed Posehn, 2017\n";
+	cout << "Reed Posehn, 2017-2018\n";
 	cout << "=================================================\n";
         cout << "=================================================\n";
 	cout << endl;

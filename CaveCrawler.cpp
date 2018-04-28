@@ -9,6 +9,7 @@
 #include "Events.h"
 using namespace std;
 
+
 string cmd; // the users command
 int state;
 const int STATE_RUN = 0;
@@ -18,6 +19,7 @@ room *Rooms;
 int cur;
 int itemRoll;
 
+// Run user commands
 int running(player you, string arg)
 {
 	if(arg.compare("quit") == 0)
@@ -97,6 +99,7 @@ int running(player you, string arg)
 	return 0;
 }
 
+
 int main()
 {	
 	Intro();
@@ -104,6 +107,7 @@ int main()
 	cur = 0;
 	Me = initPlayer();	
 	Rooms = initRooms();
+	// Gamestate run loop
 	while(state == STATE_RUN)
 	{
 		cout << "What would you like to do?\n";

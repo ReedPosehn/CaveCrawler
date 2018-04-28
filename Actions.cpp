@@ -6,26 +6,35 @@
 #include "Actions.h"
 using namespace std;
 
+
+// Prints a list of commands for the user
 void help()
 {
 	cout << "Possible commands --" << endl;
 	cout << "look -- Gives a description of the surounding area." << endl;
 	cout << "move -- Travel to a different area." << endl;
-	cout << "supplies -- Check your on hand supplies." << endl;
+	cout << "supplies -- Check your on-hand supplies." << endl;
 }
 
+
+// Provides a description of the room
 void look(room cur)
 {
 	cout << cur.desc << endl;
 }
 
+
+// Allows the user to move to a different room
 int move(room cur, int dir)
 {	
+	// Allows the user to pick the room they want to move to
 	int temp = 1;
 	int north = 0;
 	int west = 0;
 	int south = 0;
 	int east = 0;
+
+	// Increment room choices
 	if(cur.north == 1)
 	{
 		north = temp;
@@ -47,6 +56,7 @@ int move(room cur, int dir)
                 temp++;
         }
 
+	// Return new room
 	if(north == dir)
         {
                 return cur.northR->id;
@@ -67,6 +77,7 @@ int move(room cur, int dir)
 	return 0;
 }
 
+// Prints the players current supplies
 void supplies(player you)
 {
 	if(you.belt.berry != 0)
