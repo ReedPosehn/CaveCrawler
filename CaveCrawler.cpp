@@ -62,29 +62,35 @@ int running(player you, string arg)
 		cin >> dir;
 		cur = move(Rooms[cur], dir);
 		cin.ignore();
-		itemRoll = spawnItem();
-		if(itemRoll != 0)
+		if(Rooms[cur].item == 1)
 		{
-			if(itemRoll == 1)
+			cout << "Item: " << Rooms[cur].item << endl;
+			itemRoll = spawnItem();
+			cout << itemRoll << endl;
+			if(itemRoll != 0)
 			{
-				Me.belt.berry++;
-				cout << "You've found a berry." << endl;
+				if(itemRoll == 1)
+				{
+					Me.belt.berry++;
+					cout << "You've found a berry." << endl;
+				}
+				if(itemRoll == 2)
+                		{
+					Me.belt.mushroom++;
+					cout << "You've found a mushroom." << endl;
+                		}
+				if(itemRoll == 3)
+				{
+					Me.belt.water++;
+					cout << "You've found some water." << endl;
+				}
+				if(itemRoll == 4)
+				{
+					Me.belt.meat++;
+					cout << "You've found a piece of meat." << endl;
+				}
 			}
-			if(itemRoll == 2)
-                	{
-				Me.belt.mushroom++;
-				cout << "You've found a mushroom." << endl;
-                	}
-			if(itemRoll == 3)
-			{
-				Me.belt.water++;
-				cout << "You've found some water." << endl;
-			}
-			if(itemRoll == 4)
-			{
-				Me.belt.meat++;
-				cout << "You've found a piece of meat." << endl;
-			}
+			Rooms[cur].item = 0;
 		}
 	}
 	else if(arg.compare("supplies") == 0)

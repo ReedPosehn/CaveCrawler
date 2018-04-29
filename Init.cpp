@@ -44,7 +44,7 @@ room* initRooms()
 	rooms[0].west = 0;
 	rooms[0].east = 1;
 	rooms[0].south = 0;
-	rooms[0].item = 0;
+	rooms[0].item = 1;
 	rooms[0].desc = "A cramped, musky room. Its empty, with the exception "
 	"of torches lining the walls.\nThere are two exits, to the north and "
 	"to the east.\n";
@@ -56,7 +56,7 @@ room* initRooms()
         rooms[1].west = 0;
         rooms[1].east = 1;
         rooms[1].south = 1;
-	rooms[1].item = 0;
+	rooms[1].item = 1;
 	rooms[1].desc = "A wide cavern, with a large body of water. You cannot "
 	"tell the depth of the water.\nThe room is extremely dark and damp. "
 	"There are exits to the east and to the south.\n";
@@ -68,7 +68,7 @@ room* initRooms()
         rooms[2].west = 1;
         rooms[2].east = 0;
         rooms[2].south = 0;
-	rooms[2].item = 0;
+	rooms[2].item = 1;
 	rooms[2].desc = "A small tiny room. There are odd scratchs and markings"
 	" covering the walls.\nThe light is dim but penetrates from the west.\n"
 	"There are exits to the north and to the west.";
@@ -80,7 +80,7 @@ room* initRooms()
         rooms[3].west = 1;
         rooms[3].east = 0;
         rooms[3].south = 1;
-	rooms[3].item = 0;
+	rooms[3].item = 1;
 	rooms[3].desc = "This room is wide and narrow, with a gentle breeze "
 	"coming from north.\nIt looks like it exits to a forest.\nExits to the "
 	"west and south continue further into the \ncave.";

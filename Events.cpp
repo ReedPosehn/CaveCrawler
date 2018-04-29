@@ -7,7 +7,7 @@ using namespace std;
 // Chance of spawning an item upon entering a room
 int spawnItem()
 {
-	int roll = rand() % 10;
+	int roll = rand() % 5;
 	if(roll == 0)
 	{
 		int itemRoll = rand() % 5;
