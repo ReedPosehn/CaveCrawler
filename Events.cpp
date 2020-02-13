@@ -15,18 +15,18 @@ int spawnItem()
 		{
 			return 1;
 		}
-                if(itemRoll == 2)
-                {
+        if(itemRoll == 2)
+        {
 			return 2;
-                }
+        }
 		if(itemRoll == 3)
-                {
+        {
 			return 3;
-                }
+        }
 		if(itemRoll == 4)
-                {
+        {
 			return 4;
-                }
+        }
 	}
 	return 0;
 }

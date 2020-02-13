@@ -46,31 +46,31 @@ int move(room cur, int dir)
 		temp++;	
 	}
 	if(cur.east == 1)
-        {
-                east = temp;
-                temp++;
-        }
+    {
+        east = temp;
+        temp++;
+	}
 	if(cur.south == 1)
-        {
-                south = temp;
-                temp++;
-        }
+	{
+		south = temp;
+		temp++;
+	}
 
 	// Return new room
 	if(north == dir)
-        {
-                return cur.northR->id;
-        }
-        else if(west == dir)
-        {
-                return cur.westR->id;
-        }
-        else if(east == dir)
-        {
+	{
+		return cur.northR->id;
+	}
+	else if(west == dir)
+	{
+		return cur.westR->id;
+	}
+	else if(east == dir)
+	{
 		return cur.eastR->id;
 	}
-        else if(south == dir)
-        {
+	else if(south == dir)
+	{
 		return cur.southR->id;
 	}
 	cout << "Cannot go that direction." << endl;
@@ -80,20 +80,29 @@ int move(room cur, int dir)
 // Prints the players current supplies
 void supplies(player you)
 {
+	int empty = 0;
 	if(you.belt.berry != 0)
 	{
+		empty = 1;
 		cout << you.belt.berry << " berries." << endl;	
 	}
 	if(you.belt.mushroom != 0)
-        {
-                cout << you.belt.mushroom << " mushrooms." << endl;
-        }
+	{
+		empty = 1;
+		cout << you.belt.mushroom << " mushrooms." << endl;
+	}
 	if(you.belt.water != 0)
-        {
-                cout << you.belt.water << " drinks of water." << endl;
-        }
+	{
+		empty = 1;
+		cout << you.belt.water << " drinks of water." << endl;
+	}
 	if(you.belt.meat != 0)
-        {
-                cout << you.belt.meat << " pieces of meat." << endl;
-        }
+	{
+		empty = 1;
+		cout << you.belt.meat << " pieces of meat." << endl;
+	}
+	if(empty == 0)
+	{
+		cout << "You have nothing on you." << endl;
+	}
 }

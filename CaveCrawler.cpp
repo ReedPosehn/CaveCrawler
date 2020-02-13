@@ -45,20 +45,20 @@ int running(player you, string arg)
 			temp++;
 		}
 		if(Rooms[cur].west == 1)
-                {
-                        cout << "West - " << temp <<  endl;
-                        temp++;
-                }
+		{
+			cout << "West - " << temp <<  endl;
+			temp++;
+		}
 		if(Rooms[cur].east == 1)
-                {
-                        cout << "East - " << temp <<  endl;
-                        temp++;
-                }
+		{
+			cout << "East - " << temp <<  endl;
+			temp++;
+		}
 		if(Rooms[cur].south == 1)
-                {
-                        cout << "South - " << temp <<  endl;
-                        temp++;
-                }
+		{
+			cout << "South - " << temp <<  endl;
+			temp++;
+		}
 		cin >> dir;
 		cur = move(Rooms[cur], dir);
 		cin.ignore();
@@ -75,10 +75,10 @@ int running(player you, string arg)
 					cout << "You've found a berry." << endl;
 				}
 				if(itemRoll == 2)
-                		{
+               	{
 					Me.belt.mushroom++;
 					cout << "You've found a mushroom." << endl;
-                		}
+                }
 				if(itemRoll == 3)
 				{
 					Me.belt.water++;
