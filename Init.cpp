@@ -136,13 +136,45 @@ room* initRooms()
     rooms[7].westR = &rooms[5];
 	
 	rooms[8].id = 8;
-	rooms[8].north = 0;
+	rooms[8].north = 1;
 	rooms[8].west = 0;
 	rooms[8].east = 1;
-	rooms[8].south = 0;
+	rooms[8].south = 1;
 	rooms[8].item = 1;
 	rooms[8].desc = "The forest is so dark you can barely make out anything. Your feet sink into the mud "
 	"with every\nstep. You can no longer tell from which direction you came and which you should continue in.\n";
     rooms[8].eastR = &rooms[6];
+	rooms[8].southR = &rooms[9];
+	rooms[8].northR = &rooms[10];
+	
+	rooms[9].id = 9;
+	rooms[9].north = 1;
+	rooms[9].west = 0;
+	rooms[9].east = 0;
+	rooms[9].south = 0;
+	rooms[9].item = 1;
+	rooms[9].desc = "In front of you is a cave wall; it must be the cave you woke up in. It extends upwards taller "
+	"than\n you are able to see. The dense forest becomes somehow denser as you approach. You see no way forward.\n";
+    rooms[9].northR = &rooms[8];
+	
+	rooms[10].id = 10;
+	rooms[10].north = 0;
+	rooms[10].west = 0;
+	rooms[10].east = 1;
+	rooms[10].south = 1;
+	rooms[10].item = 1;
+	rooms[10].desc = "There is more light here. You are able to make out different shapes and forms. The light seems to"
+	"grow towards\nthe east. However, there is also a more ominous feeling coming from that direction.\n";
+    rooms[10].southR = &rooms[8];
+	rooms[10].eastR = &rooms[11];
+	
+	rooms[11].id = 11;
+	rooms[11].north = 0;
+	rooms[11].west = 1;
+	rooms[11].east = 0;
+	rooms[11].south = 0;
+	rooms[11].item = 1;
+	rooms[11].desc = "A giant ork beast wielding two ancient looking scimitars. It looks threatening.\n";
+    rooms[11].westR = &rooms[10];
 	return rooms;
 }
