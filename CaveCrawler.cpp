@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctime>
 #include "Stats.h"
 #include "Intro.h"
 #include "Init.h"
@@ -17,7 +18,6 @@ const int STATE_QUIT = 1;
 player Me;
 room *Rooms;
 int cur;
-int itemRoll;
 
 // Run user commands
 int running(player you, string arg)
@@ -38,6 +38,8 @@ int running(player you, string arg)
 	{
 		int temp = 1;
 		int dir;
+		int itemRoll;
+		int monster;
 		cout << "Which direction would you like to go?" << endl;
 		if(Rooms[cur].north == 1)
 		{
@@ -62,6 +64,7 @@ int running(player you, string arg)
 		cin >> dir;
 		cur = move(Rooms[cur], dir);
 		cin.ignore();
+		// Check if eligible to spawn an item
 		if(Rooms[cur].item == 1)
 		{
 			cout << "Item: " << Rooms[cur].item << endl;
@@ -92,6 +95,11 @@ int running(player you, string arg)
 			}
 			Rooms[cur].item = 0;
 		}
+		// Potentially spawn monster
+		monster = spawnMon(Rooms[cur].mob);
+		/*if (monster == 1) {
+			
+		}*/
 	}
 	else if(arg.compare("supplies") == 0)
 	{
@@ -113,6 +121,8 @@ int main()
 	cur = 0;
 	Me = initPlayer();	
 	Rooms = initRooms();
+	// Seeding time based off of Epoch time
+	srand(time(NULL));
 	// Gamestate run loop
 	while(state == STATE_RUN)
 	{

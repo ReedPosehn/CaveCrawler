@@ -45,6 +45,7 @@ room* initRooms()
 	rooms[0].east = 1;
 	rooms[0].south = 0;
 	rooms[0].item = 1;
+	rooms[0].mob = 0;
 	rooms[0].desc = "A cramped, musky room. Its empty, with the exception "
 	"of torches lining the walls.\nThere are two exits, to the north and "
 	"to the east.\n";
@@ -57,6 +58,7 @@ room* initRooms()
 	rooms[1].east = 1;
 	rooms[1].south = 1;
 	rooms[1].item = 1;
+	rooms[1].mob = 1;
 	rooms[1].desc = "A wide cavern, with a large body of water. You cannot "
 	"tell the depth of the water.\nThe room is extremely dark and damp. "
 	"There are exits to the east and to the south.\n";
@@ -69,6 +71,7 @@ room* initRooms()
 	rooms[2].east = 0;
 	rooms[2].south = 0;
 	rooms[2].item = 1;
+	rooms[2].mob = 2;
 	rooms[2].desc = "A small tiny room. There are odd scratchs and markings"
 	" covering the walls.\nThe light is dim but penetrates from the west.\n"
 	"There are exits to the north and to the west.\n";
@@ -81,6 +84,7 @@ room* initRooms()
 	rooms[3].east = 0;
 	rooms[3].south = 1;
 	rooms[3].item = 1;
+	rooms[3].mob = 1;
 	rooms[3].desc = "This room is wide and narrow, with a gentle breeze "
 	"coming from north.\nIt looks like it exits to a forest.\nExits to the "
 	"west and south continue further into the cave.\n";
@@ -94,6 +98,7 @@ room* initRooms()
 	rooms[4].east = 0;
 	rooms[4].south = 1;
 	rooms[4].item = 1;
+	rooms[4].mob = 5;
 	rooms[4].desc = "A claustrophobic path exiting the cave leads through "
 	"a dense patch\nof trees. It feels unsafe; you should probably leave.\n";
     rooms[4].southR = &rooms[3];
@@ -105,6 +110,7 @@ room* initRooms()
 	rooms[5].east = 1;
 	rooms[5].south = 1;
 	rooms[5].item = 1;
+	rooms[5].mob = 3;
 	rooms[5].desc = "An abandonded clearing. You can barely make out refuse and "
 	"various broken\ngoods scattered across the grass. To the west is more forest and trees.\n"
 	"To the east you can make out some type of structure far in the distance.\n";
@@ -118,6 +124,7 @@ room* initRooms()
 	rooms[6].east = 1;
 	rooms[6].south = 0;
 	rooms[6].item = 1;
+	rooms[6].mob = 3;
 	rooms[6].desc = "You've entered the dark, dense forest. Noises can be heard in the distance "
 	"of various\ndifferent creatures. The ground shifts between various highs and lows; it is tiring.\n"
 	"You can continue west or return east where you came from.\n";
@@ -130,6 +137,7 @@ room* initRooms()
 	rooms[7].east = 0;
 	rooms[7].south = 0;
 	rooms[7].item = 1;
+	rooms[7].mob = 1;
 	rooms[7].desc = "Clear of the forest, you can see the sun as it sets. The view is scenic as you "
 	"approach\nthe cliffside. You can see a rickety bridge travel down eastward into the shore of a lake.\n"
 	"On the other side of it you notice an entrance to the canyon across from it.";
@@ -141,6 +149,7 @@ room* initRooms()
 	rooms[8].east = 1;
 	rooms[8].south = 1;
 	rooms[8].item = 1;
+	rooms[8].mob = 4;
 	rooms[8].desc = "The forest is so dark you can barely make out anything. Your feet sink into the mud "
 	"with every\nstep. You can no longer tell from which direction you came and which you should continue in.\n";
     rooms[8].eastR = &rooms[6];
@@ -153,6 +162,7 @@ room* initRooms()
 	rooms[9].east = 0;
 	rooms[9].south = 0;
 	rooms[9].item = 1;
+	rooms[9].mob = 2;
 	rooms[9].desc = "In front of you is a cave wall; it must be the cave you woke up in. It extends upwards taller "
 	"than\n you are able to see. The dense forest becomes somehow denser as you approach. You see no way forward.\n";
     rooms[9].northR = &rooms[8];
@@ -163,6 +173,7 @@ room* initRooms()
 	rooms[10].east = 1;
 	rooms[10].south = 1;
 	rooms[10].item = 1;
+	rooms[10].mob = 3;
 	rooms[10].desc = "There is more light here. You are able to make out different shapes and forms. The light seems to"
 	"grow towards\nthe east. However, there is also a more ominous feeling coming from that direction.\n";
     rooms[10].southR = &rooms[8];
@@ -174,6 +185,7 @@ room* initRooms()
 	rooms[11].east = 0;
 	rooms[11].south = 0;
 	rooms[11].item = 1;
+	rooms[11].mob = 9;
 	rooms[11].desc = "A giant ork beast wielding two ancient looking scimitars. It looks threatening.\n";
     rooms[11].westR = &rooms[10];
 	return rooms;

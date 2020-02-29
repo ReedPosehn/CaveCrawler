@@ -32,7 +32,14 @@ int spawnItem()
 }
 
 // Chance of spawning a monster upon entering a room
-int spawnMonster()
+int spawnMon(int rng)
 {
+	int roll = (rand() % 10) + 1;
+	cout << "Roll: " << roll << endl;
+	cout << "Rng: " << rng << endl;
+	if (rng >= roll) {
+		// Spawn mob
+		return 1;
+	}
 	return 0;
 }

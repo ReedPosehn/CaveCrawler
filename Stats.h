@@ -57,15 +57,16 @@ struct enemy
 
 struct room
 {
-	int id;
-	int north;
+	int id; // room id
+	int north; // directionals -- if 1, then yes
 	int west;
 	int east;
 	int south;
-	room* northR;
+	room* northR; // pointers to adjacent rooms
 	room* westR;
 	room* eastR;
 	room* southR;
-	int item;
+	int item; // 1 if unclaimed item; spawns using rng
+	int mob; // chance of mob spawning -- 0 is never, 10 is always
 	string desc;
 };
