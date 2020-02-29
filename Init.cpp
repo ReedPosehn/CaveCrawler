@@ -114,14 +114,15 @@ room* initRooms()
 	
 	rooms[6].id = 6;
 	rooms[6].north = 0;
-	rooms[6].west = 0;
+	rooms[6].west = 1;
 	rooms[6].east = 1;
 	rooms[6].south = 0;
 	rooms[6].item = 1;
 	rooms[6].desc = "You've entered the dark, dense forest. Noises can be heard in the distance "
-	"of various\ndifferentcreatures. The ground shifts between various highs and lows; it is tiring.\n"
+	"of various\ndifferent creatures. The ground shifts between various highs and lows; it is tiring.\n"
 	"You can continue west or return east where you came from.\n";
     rooms[6].eastR = &rooms[5];
+	rooms[6].westR = &rooms[8];
 	
 	rooms[7].id = 7;
 	rooms[7].north = 0;
@@ -133,5 +134,15 @@ room* initRooms()
 	"approach\nthe cliffside. You can see a rickety bridge travel down eastward into the shore of a lake.\n"
 	"On the other side of it you notice an entrance to the canyon across from it.";
     rooms[7].westR = &rooms[5];
+	
+	rooms[8].id = 8;
+	rooms[8].north = 0;
+	rooms[8].west = 0;
+	rooms[8].east = 1;
+	rooms[8].south = 0;
+	rooms[8].item = 1;
+	rooms[8].desc = "The forest is so dark you can barely make out anything. Your feet sink into the mud "
+	"with every\nstep. You can no longer tell from which direction you came and which you should continue in.\n";
+    rooms[8].eastR = &rooms[6];
 	return rooms;
 }
