@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include "Stats.h"
+#include "Init.h"
 using namespace std;
 
 // Chance of spawning an item upon entering a room
@@ -31,14 +33,20 @@ int spawnItem()
 	return 0;
 }
 
+// Initiate a fight with a monster
+int fight(mob* mobs) {
+	int fightRoll = rand() % 1;
+	mob currMob = getMob(fightRoll, mobs);
+	return 0;
+}
+
 // Chance of spawning a monster upon entering a room
-int spawnMon(int rng)
+int spawnMon(int rng, mob* mobs)
 {
 	int roll = (rand() % 10) + 1;
-	cout << "Roll: " << roll << endl;
-	cout << "Rng: " << rng << endl;
 	if (rng >= roll) {
 		// Spawn mob
+		fight(mobs);
 		return 1;
 	}
 	return 0;

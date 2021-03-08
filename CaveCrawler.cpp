@@ -17,6 +17,7 @@ const int STATE_RUN = 0;
 const int STATE_QUIT = 1;
 player Me;
 room *Rooms;
+mob *mobs;
 int cur;
 
 // Run user commands
@@ -67,9 +68,7 @@ int running(player you, string arg)
 		// Check if eligible to spawn an item
 		if(Rooms[cur].item == 1)
 		{
-			cout << "Item: " << Rooms[cur].item << endl;
 			itemRoll = spawnItem();
-			cout << itemRoll << endl;
 			if(itemRoll != 0)
 			{
 				if(itemRoll == 1)
@@ -96,7 +95,7 @@ int running(player you, string arg)
 			Rooms[cur].item = 0;
 		}
 		// Potentially spawn monster
-		monster = spawnMon(Rooms[cur].mob);
+		monster = spawnMon(Rooms[cur].mobSpw, mobs);
 		/*if (monster == 1) {
 			
 		}*/
@@ -121,6 +120,7 @@ int main()
 	cur = 0;
 	Me = initPlayer();	
 	Rooms = initRooms();
+	mobs = initMobs();
 	// Seeding time based off of Epoch time
 	srand(time(NULL));
 	// Gamestate run loop

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "Stats.h"
+#include "Init.h"
 #include "Actions.h"
 using namespace std;
 

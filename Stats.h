@@ -2,6 +2,7 @@
 using namespace std;
 
 typedef struct room room;
+typedef struct mob mob;
 typedef struct weapon weapon;
 typedef struct status status;
 typedef struct belt belt;
@@ -67,6 +68,15 @@ struct room
 	room* eastR;
 	room* southR;
 	int item; // 1 if unclaimed item; spawns using rng
-	int mob; // chance of mob spawning -- 0 is never, 10 is always
+	int mobSpw; // chance of mob spawning -- 0 is never, 10 is always
 	string desc;
+};
+
+struct mob
+{
+	int health; // health of the mob
+	int maxDmg; // max damage the mob can do
+	int drop; // non-zero if the mob has a unique drop
+	string desc;
+	string name;
 };
