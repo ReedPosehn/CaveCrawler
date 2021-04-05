@@ -107,3 +107,84 @@ void supplies(player you)
 		cout << "You have nothing on you." << endl;
 	}
 }
+
+// Prints the players current supplies, returns list of what they have
+int* suppliesEx(player you)
+{
+	//int array of items
+	int* items = new int[4]{0};
+	int empty = 0;
+	if(you.belt.berry != 0)
+	{
+		empty = 1;
+		cout << you.belt.berry << " berries." << endl;
+		items[0] = you.belt.berry;
+	}
+	if(you.belt.mushroom != 0)
+	{
+		empty = 1;
+		cout << you.belt.mushroom << " mushrooms." << endl;
+		items[1] = you.belt.mushroom;
+	}
+	if(you.belt.water != 0)
+	{
+		empty = 1;
+		cout << you.belt.water << " drinks of water." << endl;
+		items[2] = you.belt.water;
+	}
+	if(you.belt.meat != 0)
+	{
+		empty = 1;
+		cout << you.belt.meat << " pieces of meat." << endl;
+		items[3] = you.belt.meat;
+	}
+	if(empty == 0)
+	{
+		cout << "You have nothing on you." << endl;
+	}
+	return items;
+}
+
+// Use a specific item
+void useItem(string item, player* me) {
+	//TODO - this piece and the corresponding piece in Events.cpp need to be updated to be more scalable
+	if(item == "Berry")
+	{
+		if (me->belt.berry > 0) {
+			me->belt.berry--;
+		}
+		else  {
+			cout << "You have no berries to use." << endl;
+		}
+	}
+	else if(item == "Mushroom")
+	{
+		if (me->belt.mushroom > 0) {
+			me->belt.mushroom--;
+		}
+		else  {
+			cout << "You have no mushrooms to use." << endl;
+		}
+	}
+	else if(item == "Water")
+	{
+		if (me->belt.water > 0) {
+			me->belt.water--;
+		}
+		else  {
+			cout << "You have no water to use." << endl;
+		}
+	}
+	else if(item == "Meat")
+	{
+		if (me->belt.meat > 0) {
+			me->belt.meat--;
+		}
+		else  {
+			cout << "You have no meat to use." << endl;
+		}
+	}
+	else {
+		cout << "You don't have that on your belt." << endl;
+	}
+}

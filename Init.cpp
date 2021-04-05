@@ -11,8 +11,8 @@ player initPlayer()
 {
 	struct player *p = new player();
 	p->health = 10;
-	p->phyStr = 10;
-	p->specStr = 10;
+	p->phyStr = 3;
+	p->specStr = 3;
 	p->speed = 10;
 	p->barehand = 1;
 	p->belt = initPlayerBelt();

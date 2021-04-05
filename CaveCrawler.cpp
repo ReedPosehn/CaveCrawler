@@ -95,7 +95,7 @@ int running(player you, string arg)
 			Rooms[cur].item = 0;
 		}
 		// Potentially spawn monster
-		monster = spawnMon(Rooms[cur].mobSpw, mobs);
+		monster = spawnMon(Rooms[cur].mobSpw, mobs, &Me);
 		/*if (monster == 1) {
 			
 		}*/
