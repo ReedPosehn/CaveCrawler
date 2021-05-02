@@ -9,9 +9,9 @@ Main functionality allows for traversing a cave, surrounding areas and examining
 Monster and fight mechanics implemented.
 Item system implemented.
 First world-map finished.
+First boss added - defeating ends the beta version of the game.
 
 ## TODO
-Add boss monster for first world.
 Build experience system.
 Add weapons.
 
