@@ -18,6 +18,7 @@ const int STATE_QUIT = 1;
 player Me;
 room *Rooms;
 mob *mobs;
+boss *bosses;
 int cur;
 
 // Run user commands
@@ -41,6 +42,7 @@ int running(player you, string arg)
 		int dir;
 		int itemRoll;
 		int monster;
+		int boss;
 		cout << "Which direction would you like to go?" << endl;
 		if(Rooms[cur].north == 1)
 		{
@@ -96,9 +98,8 @@ int running(player you, string arg)
 		}
 		// Potentially spawn monster
 		monster = spawnMon(Rooms[cur].mobSpw, mobs, &Me);
-		/*if (monster == 1) {
-			
-		}*/
+		boss = spawnBoss(Rooms[cur].id, bosses, &Me);
+		
 	}
 	else if(arg.compare("supplies") == 0)
 	{
@@ -109,6 +110,8 @@ int running(player you, string arg)
 		cout << "For a list of commands, type 'help'." << endl;
 	}
 	cout << endl;
+	// End game conditions
+	checkEndGame(bosses);
 	return 0;
 }
 
@@ -121,6 +124,7 @@ int main()
 	Me = initPlayer();	
 	Rooms = initRooms();
 	mobs = initMobs();
+	bosses = initBosses();
 	// Seeding time based off of Epoch time
 	srand(time(NULL));
 	// Gamestate run loop

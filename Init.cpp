@@ -11,7 +11,7 @@ player initPlayer()
 {
 	struct player *p = new player();
 	p->health = 10;
-	p->phyStr = 3;
+	p->phyStr = 4;
 	p->specStr = 3;
 	p->speed = 10;
 	p->barehand = 1;
@@ -175,7 +175,7 @@ room* initRooms()
 	rooms[10].item = 1;
 	rooms[10].mobSpw = 3;
 	rooms[10].desc = "There is more light here. You are able to make out different shapes and forms. The light seems to"
-	"grow towards\nthe east. However, there is also a more ominous feeling coming from that direction.\n";
+	" grow towards\nthe east. However, there is also a more ominous feeling coming from that direction.\n";
     rooms[10].southR = &rooms[8];
 	rooms[10].eastR = &rooms[11];
 	
@@ -202,6 +202,22 @@ mob* initMobs()
 	mobs[0].name = "Goblin";
 	
 	return mobs;
+}
+
+// Boss setup
+boss* initBosses()
+{
+	boss *bosses = new boss[10];
+	bosses[0].health = 8;
+	bosses[0].maxDmg = 3;
+	bosses[0].drop = 0;
+	bosses[0].desc = "A hulking goblin king. Much bigger and more ferocious than the regular goblins.\n";
+	bosses[0].name = "Goblin King";
+	bosses[0].spec = "Double slash";
+	bosses[0].room = 11;
+	bosses[0].defeated = 0;
+	
+	return bosses;
 }
 
 // Get a specific type of mob

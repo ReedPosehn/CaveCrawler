@@ -3,6 +3,7 @@ using namespace std;
 
 typedef struct room room;
 typedef struct mob mob;
+typedef struct boss boss;
 typedef struct weapon weapon;
 typedef struct status status;
 typedef struct belt belt;
@@ -79,4 +80,16 @@ struct mob
 	int drop; // non-zero if the mob has a unique drop
 	string desc;
 	string name;
+};
+
+struct boss
+{
+	int health; // health of the mob
+	int maxDmg; // max damage the mob can do
+	int drop; // non-zero if the mob has a unique drop
+	string desc;
+	string name;
+	string spec; // special move
+	int room;
+	int defeated;
 };
